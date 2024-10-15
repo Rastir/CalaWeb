@@ -164,135 +164,175 @@
                     <div class="p-5">
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Ingresar datos</h1>
-                            <p>Ingresa los datos del huesped a registrar, verifica que los datos ingresados
-                                sean los correctos.
-                            </p>
+                            <p>Ingresa los datos del huesped a registrar, verifica que los datos ingresados sean los
+                                correctos.</p>
                         </div>
                         <form class="user">
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                    <input type="text" class="form-control form-control-user" id="nombre"
                                         placeholder="Nombre">
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control form-control-user" id="exampleLastName"
+                                    <input type="text" class="form-control form-control-user" id="apellido"
                                         placeholder="Apellido">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                <input type="email" class="form-control form-control-user" id="email"
                                     placeholder="Email Address">
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                    <input type="text" class="form-control form-control-user" id="edad"
                                         placeholder="Edad">
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control form-control-user" id="exampleLastName"
+                                    <input type="text" class="form-control form-control-user" id="visita"
                                         placeholder="Numero de visita">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                    placeholder="¿Preferencias de alimentos y bebidas ?">
+                                <input type="text" class="form-control form-control-user" id="alimentos"
+                                    placeholder="¿Preferencias de alimentos y bebidas?">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                    placeholder="¿Preferencias de experiencia ?">
+                                <input type="text" class="form-control form-control-user" id="experiencia"
+                                    placeholder="¿Preferencias de experiencia?">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                    placeholder="¿Preferencias de mayordomos ?">
+                                <input type="text" class="form-control form-control-user" id="mayordomos"
+                                    placeholder="¿Preferencias de mayordomos?">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                    placeholder="¿Preferencias del servicio de mayordomia ?">
+                                <input type="text" class="form-control form-control-user" id="servicioMayordomia"
+                                    placeholder="¿Preferencias del servicio de mayordomia?">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                <input type="text" class="form-control form-control-user" id="alergias"
                                     placeholder="¿Alergias?">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                <input type="text" class="form-control form-control-user" id="observaciones"
                                     placeholder="¿Alguna observación referente al huesped?">
                             </div>
                             <hr>
-                            </a>
-                            <a href="altaAqualoversExitoso.html" class="btn btn-facebook btn-user btn-block">
+                            <button type="button" class="btn btn-facebook btn-user btn-block" id="agregarPersona">
                                 <i class="fa-solid fa-check"></i> Agregar persona
-                            </a>
+                            </button>
                         </form>
+                    </div>
+                    <!-- End of Main Content -->
+
+                    <!-- Footer -->
+                    <footer class="sticky-footer bg-white">
+
+                    </footer>
+                    <!-- End of Footer -->
+
+                </div>
+                <!-- End of Content Wrapper -->
+
+            </div>
+            <!-- End of Page Wrapper -->
+
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-primary" href="login.html">Logout</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <!-- Bootstrap core JavaScript-->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            </footer>
-            <!-- End of Footer -->
+            <!-- Core plugin JavaScript-->
+            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        </div>
-        <!-- End of Content Wrapper -->
+            <!-- Custom scripts for all pages-->
+            <script src="js/sb-admin-2.min.js"></script>
 
-    </div>
-    <!-- End of Page Wrapper -->
+            <!-- Page level plugins -->
+            <script src="vendor/chart.js/Chart.min.js"></script>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+            <!-- Page level custom scripts -->
+            <script src="js/demo/chart-area-demo.js"></script>
+            <script src="js/demo/chart-pie-demo.js"></script>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+            <!-- Font Awesome script-->
+            <script src="https://kit.fontawesome.com/ec5d2cd8cd.js" crossorigin="anonymous"></script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- Heres the script for the json creation-->
+            <script>
+                document.getElementById('agregarPersona').addEventListener('click', async () => {
+                    const datos = {
+                        name: document.getElementById('nombre').value,
+                        lastName: document.getElementById('apellido').value,
+                        email: document.getElementById('email').value,
+                        age: parseInt(document.getElementById('edad').value),
+                        noVisit: document.getElementById('visita').value,
+                        foodAndBeverages: document.getElementById('alimentos').value,
+                        experience: document.getElementById('experiencia').value,
+                        butler: document.getElementById('mayordomos').value,
+                        preference: document.getElementById('servicioMayordomia').value,
+                        alergies: document.getElementById('alergias').value,
+                        notes: document.getElementById('observaciones').value,
+                        aquaLevel: [],
+                        lal: true
+                    };
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                    const datosJSON = JSON.stringify(datos);
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+                    try {
+                        const response = await fetch('http://vps-4437505-x.dattaweb.com:8080/personas/crear', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: datosJSON
+                        });
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+                        if (response.ok) {
+                            const data = await response.json();
+                            console.log('Registro exitoso:', data);
+                            window.location.href = 'altaAqualoversExitoso.html';
+                        } else {
+                            console.error('Error en el registro:', response.statusText);
+                        }
+                    } catch (error) {
+                        console.error('Error en la solicitud:', error);
+                    }
+                });
+            </script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-
-    <!-- Font Awesome script-->
-    <script src="https://kit.fontawesome.com/ec5d2cd8cd.js" crossorigin="anonymous"></script>
-
-    <style>
-        .fixed-size {
-            width: 100%;
-            height: 400px;
-            /* Ajusta la altura según tus necesidades */
-            object-fit: cover;
-        }
-    </style>
+            <style>
+                .fixed-size {
+                    width: 100%;
+                    height: 400px;
+                    /* Ajusta la altura según tus necesidades */
+                    object-fit: cover;
+                }
+            </style>
 
 </body>
 

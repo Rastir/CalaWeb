@@ -162,8 +162,8 @@
                     <link rel="stylesheet" href="api.css">
                     <h1>Consumo de API</h1>
                     <div id="api-data-container"></div>
-                    <button id="btn-refresh">Cargar</button>
-
+                    <button id="cargar">Cargar</button>
+                    <div id="resultado"></div>
                     
 
 
@@ -228,6 +228,23 @@
     <!-- Font Awesome script-->
     <script src="https://kit.fontawesome.com/ec5d2cd8cd.js" crossorigin="anonymous"></script>
 
+    <script>
+        const apiUrl = 'http://vps-4437505-x.dattaweb.com:8080/personas/traer';
+
+        document.getElementById('cargar').addEventListener('click', async () => {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                
+                const container = document.getElementById('resultado');
+                container.innerHTML = `
+                    <pre style="border: 1px solid #ccc; padding: 10px; margin-top: 10px; background-color: #f9f9f9;">${JSON.stringify(data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                console.error('Error al consumir la API:', error);
+            }
+        });
+    </script>
     <style>
         .fixed-size {
             width: 100%;
