@@ -1,0 +1,23 @@
+<button id="agregarPersona">Agregar Persona</button>
+
+
+<script>
+    document.getElementById('agregarPersona').addEventListener('click', async () => {
+      try {
+        const response = await fetch('http://vps-4437505-x.dattaweb.com:8080/personas/crear', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: 'Test' })
+        });
+  
+        if (response.ok) {
+          console.log('Registro exitoso:', await response.json());
+          window.location.href = 'altaAqualoversExitoso.html';
+        } else {
+          console.error('Error en el registro:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error en la solicitud:', error);
+      }
+    });
+  </script>
