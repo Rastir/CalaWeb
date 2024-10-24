@@ -161,6 +161,7 @@
                     <!-- Content Row ////////////// AQUI ! /////////// -->
 
 
+
                     <div class="p-5">
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Corregir datos</h1>
@@ -171,7 +172,7 @@
                         <form class="user">
                             <div class="form-group row">
                                 <div class="col-sm-12 mb-3 mb-sm-0">
-                                    <input type="number" class="form-control form-control-user" id="idAquaLover"
+                                    <input type="text" class="form-control form-control-user" id="idAquaLover"
                                         placeholder="Id del Aqua Lover ?">
                                 </div>
                             </div>
@@ -237,149 +238,188 @@
                         <div id="mensaje" style="display:none; color: green; text-align: center; margin-top: 20px;">
                             Persona modificada exitosamente
                         </div>
+
+                        <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog"
+                            aria-labelledby="confirmModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="confirmModalLabel">Confirmar cambios</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ¿Seguro que desea confirmar los cambios?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-primary"
+                                            id="confirmarCambios">Confirmar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+                        <script
+                            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+                        <!-- End of Main Content -->
+
+                        <!-- Footer -->
+                        <footer class="sticky-footer bg-white">
+
+                        </footer>
+                        <!-- End of Footer -->
+
                     </div>
-
-                    <!-- End of Main Content -->
-
-                    <!-- Footer -->
-                    <footer class="sticky-footer bg-white">
-
-                    </footer>
-                    <!-- End of Footer -->
+                    <!-- End of Content Wrapper -->
 
                 </div>
-                <!-- End of Content Wrapper -->
+                <!-- End of Page Wrapper -->
 
-            </div>
-            <!-- End of Page Wrapper -->
+                <!-- Scroll to Top Button-->
+                <a class="scroll-to-top rounded" href="#page-top">
+                    <i class="fas fa-angle-up"></i>
+                </a>
 
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
-                <i class="fas fa-angle-up"></i>
-            </a>
-
-            <!-- Logout Modal-->
-            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="login.html">Logout</a>
+                <!-- Logout Modal-->
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">Select "Logout" below if you are ready to end your current session.
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                <a class="btn btn-primary" href="login.html">Logout</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <!-- Bootstrap core JavaScript-->
+                <script src="vendor/jquery/jquery.min.js"></script>
+                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                <!-- Core plugin JavaScript-->
+                <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
+                <!-- Custom scripts for all pages-->
+                <script src="js/sb-admin-2.min.js"></script>
 
-            <!-- Page level plugins -->
-            <script src="vendor/chart.js/Chart.min.js"></script>
+                <!-- Page level plugins -->
+                <script src="vendor/chart.js/Chart.min.js"></script>
 
-            <!-- Page level custom scripts -->
-            <script src="js/demo/chart-area-demo.js"></script>
-            <script src="js/demo/chart-pie-demo.js"></script>
+                <!-- Page level custom scripts -->
+                <script src="js/demo/chart-area-demo.js"></script>
+                <script src="js/demo/chart-pie-demo.js"></script>
 
-            <!-- Font Awesome script-->
-            <script src="https://kit.fontawesome.com/ec5d2cd8cd.js" crossorigin="anonymous"></script>
+                <!-- Font Awesome script-->
+                <script src="https://kit.fontawesome.com/ec5d2cd8cd.js" crossorigin="anonymous"></script>
 
 
-            <!-- Here goes the script for searching the aqualover by ID and editing ! -->
-    
-            <script>
-                // Código para buscar Aqua Lover
-                document.getElementById('buscarAquaLover').addEventListener('click', async () => {
-                    const id = document.getElementById('idAquaLover').value;
+                <!-- Here goes the script for searching the aqualover by ID and editing ! -->
 
-                    try {
-                        const response = await fetch(`http://vps-4437505-x.dattaweb.com:8080/personas/traer/${id}`);
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok ' + response.statusText);
+                <script>
+                    // Código para buscar Aqua Lover
+                    document.getElementById('buscarAquaLover').addEventListener('click', async () => {
+                        const id = document.getElementById('idAquaLover').value;
+
+                        try {
+                            const response = await fetch(`http://vps-4437505-x.dattaweb.com:8080/personas/traer/${id}`);
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok ' + response.statusText);
+                            }
+                            const datos = await response.json();
+
+                            document.getElementById('nombre').value = datos.name;
+                            document.getElementById('apellido').value = datos.lastName;
+                            document.getElementById('email').value = datos.email;
+                            document.getElementById('edad').value = datos.age;
+                            document.getElementById('visita').value = datos.noVisit;
+                            document.getElementById('alimentos').value = datos.foodAndBeverages;
+                            document.getElementById('experiencia').value = datos.experience;
+                            document.getElementById('mayordomos').value = datos.butler;
+                            document.getElementById('servicioMayordomia').value = datos.preference;
+                            document.getElementById('alergias').value = datos.alergies;
+                            document.getElementById('observaciones').value = datos.notes;
+                        } catch (error) {
+                            console.error('Error:', error);
                         }
-                        const datos = await response.json();
+                    });
 
-                        document.getElementById('nombre').value = datos.name;
-                        document.getElementById('apellido').value = datos.lastName;
-                        document.getElementById('email').value = datos.email;
-                        document.getElementById('edad').value = datos.age;
-                        document.getElementById('visita').value = datos.noVisit;
-                        document.getElementById('alimentos').value = datos.foodAndBeverages;
-                        document.getElementById('experiencia').value = datos.experience;
-                        document.getElementById('mayordomos').value = datos.butler;
-                        document.getElementById('servicioMayordomia').value = datos.preference;
-                        document.getElementById('alergias').value = datos.alergies;
-                        document.getElementById('observaciones').value = datos.notes;
-                    } catch (error) {
-                        console.error('Error:', error);
-                    }
-                });
+                    // Código para modificar Aqua Lover
+                    document.getElementById('modificarAquaLover').addEventListener('click', function () {
+                        $('#confirmModal').modal('show');
+                    });
 
-                // Código para modificar Aqua Lover
-                document.getElementById('modificarAquaLover').addEventListener('click', async () => {
-                    const id = document.getElementById('idAquaLover').value;
-                    const datos = {
-                        id_persona: document.getElementById('idAquaLover').value,
-                        name: document.getElementById('nombre').value,
-                        lastName: document.getElementById('apellido').value,
-                        email: document.getElementById('email').value,
-                        age: parseInt(document.getElementById('edad').value),
-                        noVisit: parseInt(document.getElementById('visita').value),
-                        foodAndBeverages: document.getElementById('alimentos').value,
-                        experience: document.getElementById('experiencia').value,
-                        butler: document.getElementById('mayordomos').value,
-                        preference: document.getElementById('servicioMayordomia').value,
-                        alergies: document.getElementById('alergias').value,
-                        notes: document.getElementById('observaciones').value
-                    };
+                    document.getElementById('confirmarCambios').addEventListener('click', async function () {
+                        $('#confirmModal').modal('hide');
 
-                    try {
-                        const response = await fetch(`http://vps-4437505-x.dattaweb.com:8080/personas/editar`, {
-                            method: 'PUT',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(datos)
-                        });
+                        const id = document.getElementById('idAquaLover').value;
+                        const datos = {
+                            id_persona: document.getElementById('idAquaLover').value,
+                            name: document.getElementById('nombre').value,
+                            lastName: document.getElementById('apellido').value,
+                            email: document.getElementById('email').value,
+                            age: parseInt(document.getElementById('edad').value),
+                            noVisit: parseInt(document.getElementById('visita').value),
+                            foodAndBeverages: document.getElementById('alimentos').value,
+                            experience: document.getElementById('experiencia').value,
+                            butler: document.getElementById('mayordomos').value,
+                            preference: document.getElementById('servicioMayordomia').value,
+                            alergies: document.getElementById('alergias').value,
+                            notes: document.getElementById('observaciones').value
+                        };
 
-                        // Leer el cuerpo de la respuesta como texto para ver el contenido exacto
-                        const responseBody = await response.text();
-                        console.log('Cuerpo de la respuesta:', responseBody);
+                        try {
+                            const response = await fetch(`http://vps-4437505-x.dattaweb.com:8080/personas/editar`, {
+                                method: 'PUT',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(datos)
+                            });
 
-                        if (response.ok) {
-                            console.log('Modificación exitosa:', responseBody);
-                            document.getElementById('mensaje').style.display = "block";
-                        } else {
-                            console.error('Error en la modificación:', responseBody);
+                            const responseBody = await response.text();
+                            console.log('Cuerpo de la respuesta:', responseBody);
+
+                            if (response.ok) {
+                                console.log('Modificación exitosa:', responseBody);
+                                document.getElementById('mensaje').style.display = "block";
+                                setTimeout(function () {
+                                    document.getElementById('mensaje').style.display = "none";
+                                }, 3000);
+                            } else {
+                                console.error('Error en la modificación:', responseBody);
+                            }
+                        } catch (error) {
+                            console.error('Error en la solicitud:', error);
                         }
-                    } catch (error) {
-                        console.error('Error en la solicitud:', error);
+                    });
+                </script>
+
+
+                <style>
+                    .fixed-size {
+                        width: 100%;
+                        height: 400px;
+                        /* Ajusta la altura según tus necesidades */
+                        object-fit: cover;
                     }
-                });
-            </script>
-            <style>
-                .fixed-size {
-                    width: 100%;
-                    height: 400px;
-                    /* Ajusta la altura según tus necesidades */
-                    object-fit: cover;
-                }
-            </style>
+                </style>
 
 </body>
 
