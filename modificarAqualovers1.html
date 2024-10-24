@@ -101,7 +101,7 @@
                     </button>
 
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Agregar personas</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Modificar personas</h1>
                     </div>
 
                     <!-- Topbar Navbar -->
@@ -163,10 +163,23 @@
 
                     <div class="p-5">
                         <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">Ingresar datos</h1>
-                            <p>Ingresa los datos del huesped a registrar, verifica que los datos ingresados sean los
-                                correctos.</p>
+                            <h1 class="h4 text-gray-900 mb-4">Corregir datos</h1>
+                            <p>Por favor, corrige o actualiza los datos del huésped, verifica que el "ID" del huésped
+                                sea el correcto y que los datos ingresados sean los correctos.</p>
                         </div>
+                        <hr>
+                        <form class="user">
+                            <div class="form-group row">
+                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <input type="number" class="form-control form-control-user" id="idAquaLover"
+                                        placeholder="Id del Aqua Lover ?">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-facebook btn-user btn-block" id="buscarAquaLover">
+                                <i class="fa-solid fa-magnifying-glass"></i> BUSCAR AQUA LOVER
+                            </button>
+                        </form>
+                        <hr>
                         <form class="user">
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
@@ -206,7 +219,7 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="servicioMayordomia"
-                                    placeholder="¿Preferencias del servicio de mayordomia?">
+                                    placeholder="¿Preferencias del servicio de mayordomía?">
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="alergias"
@@ -214,14 +227,18 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="observaciones"
-                                    placeholder="¿Alguna observación referente al huesped?">
+                                    placeholder="¿Alguna observación referente al huésped?">
                             </div>
                             <hr>
-                            <button type="button" class="btn btn-facebook btn-user btn-block" id="agregarPersona">
-                                <i class="fa-solid fa-check"></i> Agregar persona
+                            <button type="button" class="btn btn-facebook btn-user btn-block" id="modificarAquaLover">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i> MODIFICAR AQUA LOVER
                             </button>
                         </form>
+                        <div id="mensaje" style="display:none; color: green; text-align: center; margin-top: 20px;">
+                            Persona modificada exitosamente
+                        </div>
                     </div>
+
                     <!-- End of Main Content -->
 
                     <!-- Footer -->
@@ -282,49 +299,79 @@
             <!-- Font Awesome script-->
             <script src="https://kit.fontawesome.com/ec5d2cd8cd.js" crossorigin="anonymous"></script>
 
-            <!-- Heres the script for the json creation-->
+
+            <!-- Here goes the script for searching the aqualover by ID and editing ! -->
+    
             <script>
-                document.getElementById('agregarPersona').addEventListener('click', async () => {
+                // Código para buscar Aqua Lover
+                document.getElementById('buscarAquaLover').addEventListener('click', async () => {
+                    const id = document.getElementById('idAquaLover').value;
+
+                    try {
+                        const response = await fetch(`http://vps-4437505-x.dattaweb.com:8080/personas/traer/${id}`);
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok ' + response.statusText);
+                        }
+                        const datos = await response.json();
+
+                        document.getElementById('nombre').value = datos.name;
+                        document.getElementById('apellido').value = datos.lastName;
+                        document.getElementById('email').value = datos.email;
+                        document.getElementById('edad').value = datos.age;
+                        document.getElementById('visita').value = datos.noVisit;
+                        document.getElementById('alimentos').value = datos.foodAndBeverages;
+                        document.getElementById('experiencia').value = datos.experience;
+                        document.getElementById('mayordomos').value = datos.butler;
+                        document.getElementById('servicioMayordomia').value = datos.preference;
+                        document.getElementById('alergias').value = datos.alergies;
+                        document.getElementById('observaciones').value = datos.notes;
+                    } catch (error) {
+                        console.error('Error:', error);
+                    }
+                });
+
+                // Código para modificar Aqua Lover
+                document.getElementById('modificarAquaLover').addEventListener('click', async () => {
+                    const id = document.getElementById('idAquaLover').value;
                     const datos = {
+                        id_persona: document.getElementById('idAquaLover').value,
                         name: document.getElementById('nombre').value,
                         lastName: document.getElementById('apellido').value,
                         email: document.getElementById('email').value,
                         age: parseInt(document.getElementById('edad').value),
-                        noVisit: document.getElementById('visita').value,
+                        noVisit: parseInt(document.getElementById('visita').value),
                         foodAndBeverages: document.getElementById('alimentos').value,
                         experience: document.getElementById('experiencia').value,
                         butler: document.getElementById('mayordomos').value,
                         preference: document.getElementById('servicioMayordomia').value,
                         alergies: document.getElementById('alergias').value,
-                        notes: document.getElementById('observaciones').value,
-                        aquaLevel: [],
-                        lal: true
+                        notes: document.getElementById('observaciones').value
                     };
 
-                    const datosJSON = JSON.stringify(datos);
-
                     try {
-                        const response = await fetch('http://vps-4437505-x.dattaweb.com:8080/personas/crear', {
-                            method: 'POST',
+                        const response = await fetch(`http://vps-4437505-x.dattaweb.com:8080/personas/editar`, {
+                            method: 'PUT',
                             headers: {
                                 'Content-Type': 'application/json'
                             },
-                            body: datosJSON
+                            body: JSON.stringify(datos)
                         });
 
+                        // Leer el cuerpo de la respuesta como texto para ver el contenido exacto
+                        const responseBody = await response.text();
+                        console.log('Cuerpo de la respuesta:', responseBody);
+
                         if (response.ok) {
-                            const data = await response.json();
-                            console.log('Registro exitoso:', data);
-                            window.location.href = 'altaAqualoversExitoso.html';
+                            console.log('Modificación exitosa:', responseBody);
+                            document.getElementById('mensaje').style.display = "block";
                         } else {
-                            console.error('Error en el registro:', response.statusText);
+                            console.error('Error en la modificación:', responseBody);
                         }
                     } catch (error) {
                         console.error('Error en la solicitud:', error);
                     }
                 });
             </script>
-
             <style>
                 .fixed-size {
                     width: 100%;
